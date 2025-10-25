@@ -1,0 +1,10 @@
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\bin\Debug\DocGhiCSV.exe.config
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\bin\Debug\DocGhiCSV.exe
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\bin\Debug\DocGhiCSV.pdb
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.AssemblyReference.cache
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.Form1.resources
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.Properties.Resources.resources
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.GenerateResource.cache
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.CoreCompileInputs.cache
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.exe
+D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.pdb

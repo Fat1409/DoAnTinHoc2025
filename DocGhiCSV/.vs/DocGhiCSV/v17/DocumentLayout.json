@@ -1,0 +1,76 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\DOANTINHOC\\DocGhiCSV\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3D3D07F6-C70E-4E0F-A8E2-0F3A1C03467B}|DocGhiCSV\\DocGhiCSV.csproj|d:\\doantinhoc\\docghicsv\\docghicsv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D3D07F6-C70E-4E0F-A8E2-0F3A1C03467B}|DocGhiCSV\\DocGhiCSV.csproj|solutionrelative:docghicsv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D3D07F6-C70E-4E0F-A8E2-0F3A1C03467B}|DocGhiCSV\\DocGhiCSV.csproj|D:\\DOANTINHOC\\DocGhiCSV\\docghicsv\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D3D07F6-C70E-4E0F-A8E2-0F3A1C03467B}|DocGhiCSV\\DocGhiCSV.csproj|solutionrelative:docghicsv\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D3D07F6-C70E-4E0F-A8E2-0F3A1C03467B}|DocGhiCSV\\DocGhiCSV.csproj|D:\\DOANTINHOC\\DocGhiCSV\\docghicsv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3D3D07F6-C70E-4E0F-A8E2-0F3A1C03467B}|DocGhiCSV\\DocGhiCSV.csproj|solutionrelative:docghicsv\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DocGhiCSV\\DocGhiCSV\\Form1.cs",
+              "RelativeDocumentMoniker": "DocGhiCSV\\Form1.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DocGhiCSV\\DocGhiCSV\\Form1.cs",
+              "RelativeToolTip": "DocGhiCSV\\Form1.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T17:22:05.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DocGhiCSV\\DocGhiCSV\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "DocGhiCSV\\Form1.Designer.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DocGhiCSV\\DocGhiCSV\\Form1.Designer.cs",
+              "RelativeToolTip": "DocGhiCSV\\Form1.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T14:17:47.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\DOANTINHOC\\DocGhiCSV\\DocGhiCSV\\Form1.cs",
+              "RelativeDocumentMoniker": "DocGhiCSV\\Form1.cs",
+              "ToolTip": "D:\\DOANTINHOC\\DocGhiCSV\\DocGhiCSV\\Form1.cs [Design]",
+              "RelativeToolTip": "DocGhiCSV\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T12:28:46.89Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
