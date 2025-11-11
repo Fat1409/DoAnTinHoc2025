@@ -40,6 +40,10 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inventory_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image_src = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_updateHeight = new System.Windows.Forms.Button();
+            this.btn_balance = new System.Windows.Forms.Button();
+            this.btn_nodeHeight = new System.Windows.Forms.Button();
+            this.btn_drawTree = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,11 +148,55 @@
             this.Image_src.Name = "Image_src";
             this.Image_src.Width = 200;
             // 
+            // btn_updateHeight
+            // 
+            this.btn_updateHeight.Location = new System.Drawing.Point(682, 41);
+            this.btn_updateHeight.Name = "btn_updateHeight";
+            this.btn_updateHeight.Size = new System.Drawing.Size(149, 63);
+            this.btn_updateHeight.TabIndex = 4;
+            this.btn_updateHeight.Text = "Cập nhật chiều cao";
+            this.btn_updateHeight.UseVisualStyleBackColor = true;
+            this.btn_updateHeight.Click += new System.EventHandler(this.btn_updateHeight_Click);
+            // 
+            // btn_balance
+            // 
+            this.btn_balance.Location = new System.Drawing.Point(859, 41);
+            this.btn_balance.Name = "btn_balance";
+            this.btn_balance.Size = new System.Drawing.Size(149, 63);
+            this.btn_balance.TabIndex = 5;
+            this.btn_balance.Text = "Cân bằng cây";
+            this.btn_balance.UseVisualStyleBackColor = true;
+            this.btn_balance.Click += new System.EventHandler(this.btn_balance_Click);
+            // 
+            // btn_nodeHeight
+            // 
+            this.btn_nodeHeight.Location = new System.Drawing.Point(1029, 41);
+            this.btn_nodeHeight.Name = "btn_nodeHeight";
+            this.btn_nodeHeight.Size = new System.Drawing.Size(149, 63);
+            this.btn_nodeHeight.TabIndex = 6;
+            this.btn_nodeHeight.Text = "chiều cao";
+            this.btn_nodeHeight.UseVisualStyleBackColor = true;
+            this.btn_nodeHeight.Click += new System.EventHandler(this.btn_nodeHeight_Click);
+            // 
+            // btn_drawTree
+            // 
+            this.btn_drawTree.Location = new System.Drawing.Point(1206, 41);
+            this.btn_drawTree.Name = "btn_drawTree";
+            this.btn_drawTree.Size = new System.Drawing.Size(149, 63);
+            this.btn_drawTree.TabIndex = 7;
+            this.btn_drawTree.Text = "Vẽ Cây";
+            this.btn_drawTree.UseVisualStyleBackColor = true;
+            this.btn_drawTree.Click += new System.EventHandler(this.btn_drawTree_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1641, 735);
+            this.Controls.Add(this.btn_drawTree);
+            this.Controls.Add(this.btn_nodeHeight);
+            this.Controls.Add(this.btn_balance);
+            this.Controls.Add(this.btn_updateHeight);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.docfile_btn);
             this.Name = "Form1";
@@ -173,6 +221,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Inventory_quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Image_src;
+        private System.Windows.Forms.Button btn_updateHeight;
+        private System.Windows.Forms.Button btn_balance;
+        private System.Windows.Forms.Button btn_nodeHeight;
+        private System.Windows.Forms.Button btn_drawTree;
     }
 }
 

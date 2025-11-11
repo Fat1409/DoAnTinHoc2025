@@ -8,3 +8,13 @@ D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.GenerateResource.ca
 D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.CoreCompileInputs.cache
 D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.exe
 D:\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.pdb
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\bin\Debug\DocGhiCSV.exe.config
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\bin\Debug\DocGhiCSV.exe
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\bin\Debug\DocGhiCSV.pdb
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.AssemblyReference.cache
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.Form1.resources
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.Properties.Resources.resources
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.GenerateResource.cache
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.csproj.CoreCompileInputs.cache
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.exe
+D:\LAPTRINH\DOANTINHOC\DocGhiCSV\DocGhiCSV\obj\Debug\DocGhiCSV.pdb

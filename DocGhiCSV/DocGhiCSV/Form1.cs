@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace DocGhiCSV
 {
     public partial class Form1 : Form
     {
+        private AVLTree<double> avlPrice = new AVLTree<double>();
+
         public Form1()
         {
             InitializeComponent();
@@ -15,10 +18,10 @@ namespace DocGhiCSV
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Có thể để trống hoặc hiển thị hướng dẫn
+            // Khởi tạo các cột của DataGridView
+            dataGridView1.AutoGenerateColumns = false;
         }
 
-        // ====== NÚT ĐỌC FILE CSV ======
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -28,12 +31,11 @@ namespace DocGhiCSV
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog.FileName;
-                LoadAndCleanCsv(filePath);
+                LoadCsvToGrid(filePath);
             }
         }
 
-        // ====== HÀM ĐỌC & LÀM SẠCH DỮ LIỆU ======
-        private void LoadAndCleanCsv(string filePath)
+        private void LoadCsvToGrid(string filePath)
         {
             try
             {
@@ -48,33 +50,34 @@ namespace DocGhiCSV
                 }
 
                 dataGridView1.Rows.Clear();
+                avlPrice.Clear();
 
-                foreach (var line in lines.Skip(1)) // bỏ dòng header
+                foreach (var line in lines.Skip(1))
                 {
-                    var rawValues = ParseCsvLine(line);
-                    var cleanedValues = rawValues.Select(v => CleanValue(v)).ToArray();
+                    var values = ParseCsvLine(line).Select(v => CleanValue(v)).ToArray();
 
-                    if (cleanedValues.All(string.IsNullOrWhiteSpace)) continue;
+                    // Đảm bảo có đủ 10 cột
+                    while (values.Length < 10)
+                        values = values.Concat(new string[] { "" }).ToArray();
 
-                    // đảm bảo đủ 10 cột
-                    if (cleanedValues.Length < 10)
-                        cleanedValues = cleanedValues.Concat(Enumerable.Repeat("", 10 - cleanedValues.Length)).ToArray();
+                    dataGridView1.Rows.Add(values.Take(10).ToArray());
 
-                    // 🔹 Ép kiểu cột F (index 5) thành chuỗi
-                    cleanedValues[5] = ForceStringForSize(cleanedValues[5]);
-
-                    dataGridView1.Rows.Add(cleanedValues.Take(10).ToArray());
+                    // Lấy giá từ cột thứ 8 (Price)
+                    int priceIndex = 7;
+                    if (priceIndex < values.Length && double.TryParse(values[priceIndex], out double price))
+                    {
+                        avlPrice.Insert(price, values);
+                    }
                 }
 
-                MessageBox.Show("Đọc & làm sạch CSV thành công!");
+                MessageBox.Show("Đọc file CSV và hiển thị thành công!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi xử lý file CSV: " + ex.Message);
+                MessageBox.Show("Lỗi khi đọc file CSV: " + ex.Message);
             }
         }
 
-        // ====== HÀM PARSE DÒNG CSV ======
         private string[] ParseCsvLine(string line)
         {
             var parts = new List<string>();
@@ -84,117 +87,76 @@ namespace DocGhiCSV
             foreach (char c in line)
             {
                 if (c == '\"')
+                {
                     inQuotes = !inQuotes;
+                }
                 else if (c == ',' && !inQuotes)
                 {
                     parts.Add(current);
                     current = "";
                 }
                 else
+                {
                     current += c;
+                }
             }
 
             parts.Add(current);
             return parts.ToArray();
         }
 
-        // ====== HÀM LÀM SẠCH TỪNG GIÁ TRỊ ======
         private string CleanValue(string value)
         {
-            if (string.IsNullOrEmpty(value)) return "";
-
-            value = value.Trim();
-
-            // Bỏ ngoặc kép
-            if (value.StartsWith("\"") && value.EndsWith("\""))
-                value = value.Substring(1, value.Length - 2);
-
-            // Xóa khoảng trắng kép
-            while (value.Contains("  "))
-                value = value.Replace("  ", " ");
-
-            // Xóa ký tự đặc biệt
-            value = value.Replace("\r", "").Replace("\n", "").Replace("\t", "");
-
-            return value;
-        }
-
-        // ====== HÀM ÉP CỘT F THÀNH CHUỖI ======
-        private string ForceStringForSize(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
+            if (string.IsNullOrEmpty(value))
                 return "";
 
             value = value.Trim();
+            if (value.StartsWith("\"") && value.EndsWith("\""))
+                value = value.Substring(1, value.Length - 2);
 
-            // Nếu là số → giữ nguyên định dạng
-            if (double.TryParse(value, out double number))
-            {
-                // Nếu là số nguyên thì hiển thị "3", còn nếu số thực thì hiển thị "3.5"
-                if (Math.Abs(number % 1) < 0.0001)
-                    return number.ToString("0");
-                else
-                    return number.ToString("0.##");
-            }
+            while (value.Contains("  "))
+                value = value.Replace("  ", " ");
 
-            // Nếu là chữ → viết hoa chữ cái đầu
-            return Capitalize(value);
+            return value.Replace("\r", "").Replace("\n", "").Replace("\t", "");
         }
 
-        private string Capitalize(string value)
+        private void btn_nodeHeight_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(value)) return value;
-            return char.ToUpper(value[0]) + value.Substring(1).ToLower();
+            int height = avlPrice.GetTreeHeight();
+            MessageBox.Show("Chiều cao cây AVL hiện tại: " + height);
         }
 
-        // ====== NÚT LƯU FILE CSV ======
-        //private void SaveToCsv(string filePath)
-        //{
-        //    try
-        //    {
-        //        using (StreamWriter writer = new StreamWriter(filePath))
-        //        {
-        //            // Ghi header
-        //            string[] headers = dataGridView1.Columns
-        //                .Cast<DataGridViewColumn>()
-        //                .Select(c => c.HeaderText)
-        //                .ToArray();
-        //            writer.WriteLine(string.Join(",", headers));
+        private void btn_balance_Click(object sender, EventArgs e)
+        {
+            int balance = avlPrice.GetRootBalance();
+            MessageBox.Show("Hệ số cân bằng tại nút gốc: " + balance);
+        }
 
-        //            // Ghi từng dòng
-        //            foreach (DataGridViewRow row in dataGridView1.Rows)
-        //            {
-        //                if (!row.IsNewRow)
-        //                {
-        //                    string[] cells = row.Cells
-        //                        .Cast<DataGridViewCell>()
-        //                        .Select(c => (c.Value?.ToString() ?? "").Replace(",", " ")) // tránh lỗi dấu phẩy
-        //                        .ToArray();
+        private void btn_updateHeight_Click(object sender, EventArgs e)
+        {
+            avlPrice.RecalculateHeights();
+            MessageBox.Show("Đã cập nhật lại chiều cao của toàn bộ cây AVL!");
+        }
 
-        //                    writer.WriteLine(string.Join(",", cells));
-        //                }
-        //            }
-        //        }
+        private void btn_drawTree_Click(object sender, EventArgs e)
+        {
+            string treeText = avlPrice.PrintTree();
 
-        //        MessageBox.Show("Đã lưu file CSV thành công!");
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi khi lưu CSV: " + ex.Message);
-        //    }
-        //}
+            Form treeForm = new Form();
+            treeForm.Text = "Cấu trúc cây AVL";
+            treeForm.Size = new Size(700, 900);
+            treeForm.StartPosition = FormStartPosition.CenterParent;
 
-        // ====== THÊM NÚT LƯU FILE ======
-        //private void buttonSave_Click(object sender, EventArgs e)
-        //{
-        //    SaveFileDialog saveDialog = new SaveFileDialog();
-        //    saveDialog.Filter = "CSV Files (*.csv)|*.csv";
-        //    saveDialog.Title = "Lưu file CSV đã chỉnh sửa";
+            TextBox txt = new TextBox();
+            txt.Multiline = true;
+            txt.ScrollBars = ScrollBars.Both;
+            txt.Font = new Font("Consolas", 10);
+            txt.Dock = DockStyle.Fill;
+            txt.Text = treeText;
+            txt.ReadOnly = true;
 
-        //    if (saveDialog.ShowDialog() == DialogResult.OK)
-        //    {
-        //        SaveToCsv(saveDialog.FileName);
-        //    }
-        //}
+            treeForm.Controls.Add(txt);
+            treeForm.Show();
+        }
     }
 }
