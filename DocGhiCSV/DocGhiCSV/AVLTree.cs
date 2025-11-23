@@ -63,7 +63,7 @@ namespace DocGhiCSV
         }
 
         private Node RotateLeft(Node x)
-        {
+        {   
             Node y = x.Right;
             Node T2 = y.Left;
             y.Left = x;

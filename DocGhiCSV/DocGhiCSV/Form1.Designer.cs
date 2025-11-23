@@ -2,15 +2,8 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,14 +15,15 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.docfile_btn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_updateHeight = new System.Windows.Forms.Button();
+            this.btn_balance = new System.Windows.Forms.Button();
+            this.btn_nodeHeight = new System.Windows.Forms.Button();
+            this.btn_drawTree = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vendor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,18 +34,16 @@
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inventory_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image_src = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_updateHeight = new System.Windows.Forms.Button();
-            this.btn_balance = new System.Windows.Forms.Button();
-            this.btn_nodeHeight = new System.Windows.Forms.Button();
-            this.btn_drawTree = new System.Windows.Forms.Button();
+            this.Seri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // docfile_btn
             // 
-            this.docfile_btn.Location = new System.Drawing.Point(79, 41);
+            this.docfile_btn.Location = new System.Drawing.Point(80, 40);
+            this.docfile_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.docfile_btn.Name = "docfile_btn";
-            this.docfile_btn.Size = new System.Drawing.Size(195, 73);
+            this.docfile_btn.Size = new System.Drawing.Size(196, 73);
             this.docfile_btn.TabIndex = 0;
             this.docfile_btn.Text = "Đọc File";
             this.docfile_btn.UseVisualStyleBackColor = true;
@@ -70,13 +62,70 @@
             this.Sku,
             this.Price,
             this.Inventory_quantity,
-            this.Image_src});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 171);
+            this.Image_src,
+            this.Seri});
+            this.dataGridView1.Location = new System.Drawing.Point(1, 161);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1659, 572);
+            this.dataGridView1.Size = new System.Drawing.Size(1583, 571);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // btn_updateHeight
+            // 
+            this.btn_updateHeight.Location = new System.Drawing.Point(586, 12);
+            this.btn_updateHeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_updateHeight.Name = "btn_updateHeight";
+            this.btn_updateHeight.Size = new System.Drawing.Size(148, 63);
+            this.btn_updateHeight.TabIndex = 4;
+            this.btn_updateHeight.Text = "Cập nhật chiều cao";
+            this.btn_updateHeight.UseVisualStyleBackColor = true;
+            this.btn_updateHeight.Click += new System.EventHandler(this.btn_updateHeight_Click);
+            // 
+            // btn_balance
+            // 
+            this.btn_balance.Location = new System.Drawing.Point(586, 90);
+            this.btn_balance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_balance.Name = "btn_balance";
+            this.btn_balance.Size = new System.Drawing.Size(148, 63);
+            this.btn_balance.TabIndex = 5;
+            this.btn_balance.Text = "Cân bằng cây";
+            this.btn_balance.UseVisualStyleBackColor = true;
+            this.btn_balance.Click += new System.EventHandler(this.btn_balance_Click);
+            // 
+            // btn_nodeHeight
+            // 
+            this.btn_nodeHeight.Location = new System.Drawing.Point(772, 40);
+            this.btn_nodeHeight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_nodeHeight.Name = "btn_nodeHeight";
+            this.btn_nodeHeight.Size = new System.Drawing.Size(148, 63);
+            this.btn_nodeHeight.TabIndex = 6;
+            this.btn_nodeHeight.Text = "chiều cao";
+            this.btn_nodeHeight.UseVisualStyleBackColor = true;
+            this.btn_nodeHeight.Click += new System.EventHandler(this.btn_nodeHeight_Click);
+            // 
+            // btn_drawTree
+            // 
+            this.btn_drawTree.Location = new System.Drawing.Point(1174, 40);
+            this.btn_drawTree.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_drawTree.Name = "btn_drawTree";
+            this.btn_drawTree.Size = new System.Drawing.Size(148, 63);
+            this.btn_drawTree.TabIndex = 7;
+            this.btn_drawTree.Text = "Vẽ Cây";
+            this.btn_drawTree.UseVisualStyleBackColor = true;
+            this.btn_drawTree.Click += new System.EventHandler(this.btn_drawTree_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(970, 40);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 63);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Nhập số";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_NhapSo);
             // 
             // Title
             // 
@@ -148,57 +197,26 @@
             this.Image_src.Name = "Image_src";
             this.Image_src.Width = 200;
             // 
-            // btn_updateHeight
+            // Seri
             // 
-            this.btn_updateHeight.Location = new System.Drawing.Point(682, 41);
-            this.btn_updateHeight.Name = "btn_updateHeight";
-            this.btn_updateHeight.Size = new System.Drawing.Size(149, 63);
-            this.btn_updateHeight.TabIndex = 4;
-            this.btn_updateHeight.Text = "Cập nhật chiều cao";
-            this.btn_updateHeight.UseVisualStyleBackColor = true;
-            this.btn_updateHeight.Click += new System.EventHandler(this.btn_updateHeight_Click);
-            // 
-            // btn_balance
-            // 
-            this.btn_balance.Location = new System.Drawing.Point(859, 41);
-            this.btn_balance.Name = "btn_balance";
-            this.btn_balance.Size = new System.Drawing.Size(149, 63);
-            this.btn_balance.TabIndex = 5;
-            this.btn_balance.Text = "Cân bằng cây";
-            this.btn_balance.UseVisualStyleBackColor = true;
-            this.btn_balance.Click += new System.EventHandler(this.btn_balance_Click);
-            // 
-            // btn_nodeHeight
-            // 
-            this.btn_nodeHeight.Location = new System.Drawing.Point(1029, 41);
-            this.btn_nodeHeight.Name = "btn_nodeHeight";
-            this.btn_nodeHeight.Size = new System.Drawing.Size(149, 63);
-            this.btn_nodeHeight.TabIndex = 6;
-            this.btn_nodeHeight.Text = "chiều cao";
-            this.btn_nodeHeight.UseVisualStyleBackColor = true;
-            this.btn_nodeHeight.Click += new System.EventHandler(this.btn_nodeHeight_Click);
-            // 
-            // btn_drawTree
-            // 
-            this.btn_drawTree.Location = new System.Drawing.Point(1206, 41);
-            this.btn_drawTree.Name = "btn_drawTree";
-            this.btn_drawTree.Size = new System.Drawing.Size(149, 63);
-            this.btn_drawTree.TabIndex = 7;
-            this.btn_drawTree.Text = "Vẽ Cây";
-            this.btn_drawTree.UseVisualStyleBackColor = true;
-            this.btn_drawTree.Click += new System.EventHandler(this.btn_drawTree_Click);
+            this.Seri.HeaderText = "Seri";
+            this.Seri.MinimumWidth = 10;
+            this.Seri.Name = "Seri";
+            this.Seri.Width = 200;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1641, 735);
+            this.ClientSize = new System.Drawing.Size(1814, 735);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_drawTree);
             this.Controls.Add(this.btn_nodeHeight);
             this.Controls.Add(this.btn_balance);
             this.Controls.Add(this.btn_updateHeight);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.docfile_btn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -225,6 +243,8 @@
         private System.Windows.Forms.Button btn_balance;
         private System.Windows.Forms.Button btn_nodeHeight;
         private System.Windows.Forms.Button btn_drawTree;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Seri;
+       
     }
 }
-
